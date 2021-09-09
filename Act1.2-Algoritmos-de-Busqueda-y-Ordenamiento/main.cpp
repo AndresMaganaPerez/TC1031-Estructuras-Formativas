@@ -42,42 +42,49 @@ int main(int argc, char* argv[]) {
 	string resp2 = "[5, 10, 68, 120, 333, 897]";
 
 	prueba = original1;
-	sorts.ordenaSeleccion(prueba);
+	//sorts.ordenaSeleccion(prueba);
+    prueba = sorts.ordenaSeleccion(prueba);
 
 
 	cout << "\n" <<"1.- esperada " << resp1 << "\n programa " << arrayToString(prueba) << "\n";
 	cout <<	(!resp1.compare(arrayToString(prueba)) ? "success\n" : "fail\n");
 
 	prueba = original2;
-	sorts.ordenaSeleccion(prueba);
+	//sorts.ordenaSeleccion(prueba);
+    prueba = sorts.ordenaSeleccion(prueba);
 
 	cout << "\n" <<"2.- esperada " << resp2 << "\n programa " << arrayToString(prueba) << "\n";
 	cout <<	(!resp2.compare(arrayToString(prueba)) ? "success\n" : "fail\n");
 
 	prueba = original1;
-	sorts.ordenaBurbuja(prueba);
+	//sorts.ordenaBurbuja(prueba);
+    prueba = sorts.ordenaBurbuja(prueba);
 
 	cout << "\n" <<"3.- esperada " << resp1 << "\n   programa " << arrayToString(prueba) << "\n";
 	cout <<	(!resp1.compare(arrayToString(prueba)) ? "success\n" : "fail\n");
 
 	prueba = original2;
-	sorts.ordenaBurbuja(prueba);
+	//sorts.ordenaBurbuja(prueba);
+    prueba = sorts.ordenaBurbuja(prueba);
 
 	cout << "\n" <<"4.- esperada "  << resp2 << "\n programa " << arrayToString(prueba) << "\n";
 	cout <<	(!resp2.compare(arrayToString(prueba)) ? "success\n" : "fail\n");
 
 	prueba = original1;
-	sorts.ordenaMerge(prueba);
+	//sorts.ordenaMerge(prueba);
+    prueba = sorts.ordenaMerge(prueba);
 
 	cout << "\n" <<"5.- esperada "  << resp1 << "\n programa " << arrayToString(prueba) << "\n";
 	cout <<	(!resp1.compare(arrayToString(prueba)) ? "success\n" : "fail\n");
 
 	prueba = original2;
-	sorts.ordenaMerge(prueba);
+	//sorts.ordenaMerge(prueba);
+    prueba = sorts.ordenaSeleccion(prueba);
 	cout << "\n" <<"6.- esperada "  << resp2 << "\n programa " << arrayToString(prueba) << "\n";
 	cout <<	(!resp2.compare(arrayToString(prueba)) ? "success\n" : "fail\n");
 
-	sorts.ordenaMerge(prueba);
+	//sorts.ordenaMerge(prueba);
+    prueba = sorts.ordenaSeleccion(prueba);
 
 	cout << "\n" <<"7.- esperada "  << 5 << " programa " << sorts.busqSecuencial(prueba, 897) << "\n";
   cout <<	(5 == sorts.busqSecuencial(prueba, 897) ? "success\n" : "fail\n");

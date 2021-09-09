@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/droid/CLionProjects/TC1031-Estructuras-Formativas/Act1.1-Funciones-Iterativas-Recursivas-y-Analisis-de-Complejidad/funciones.h
+
+C:/Users/droid/CLionProjects/TC1031-Estructuras-Formativas/Act1.1-Funciones-Iterativas-Recursivas-y-Analisis-de-Complejidad/main.cpp
+iostream
+-
+funciones.h
+C:/Users/droid/CLionProjects/TC1031-Estructuras-Formativas/Act1.1-Funciones-Iterativas-Recursivas-y-Analisis-de-Complejidad/funciones.h
+
