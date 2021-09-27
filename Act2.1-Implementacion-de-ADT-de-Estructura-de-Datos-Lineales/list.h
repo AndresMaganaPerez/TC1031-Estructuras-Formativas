@@ -95,18 +95,37 @@ public:
         delete p;
         size--;
     }
-    T   deleteAt(int val){
-        Link<T> *p;
+    T   deleteAt(int index){
+        Link<T> *p, *q;
+        T val;
         int i = 0;
         p = head;
-        while (p != 0){
-            if (p->value == )
-            if (i == val){
-                delete p;
-            }
+
+        if (index == 0){
+            deleteFirst();
+        }
+        while (i != index){
+            q = p;
             p = p->next;
             ++i;
         }
+        val = p->value;
+        q->next = p->next;
+
+        delete p;
+        return val;
+        size--;
+    }
+    void update(int index, T val){
+        Link<T> *p;
+        int i = 0;
+        p = head;
+
+        while(i != index){
+            p = p->next;
+            i++;
+        }
+        p->value = val;
     }
 
     void clear(){
