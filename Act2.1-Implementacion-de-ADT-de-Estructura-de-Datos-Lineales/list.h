@@ -97,7 +97,6 @@ public:
     }
     T   deleteAt(int index){
         Link<T> *p, *q;
-        T val;
         int i = 0;
         p = head;
 
@@ -109,11 +108,8 @@ public:
             p = p->next;
             ++i;
         }
-        val = p->value;
-        q->next = p->next;
 
         delete p;
-        return val;
         size--;
     }
     void update(int index, T val){
