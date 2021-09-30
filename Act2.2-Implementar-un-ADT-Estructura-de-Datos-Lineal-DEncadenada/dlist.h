@@ -103,17 +103,15 @@ public:
         size--;
     }*/
     T   deleteAt(int index){
-        DLink<T> *p, *q;
-        int i = 0;
+        DLink<T> *p;
         p = head;
 
-        if (index == 0){
-            //deleteFirst();
-        }
-        while (i != index){
-            q = p;
-            p = p->next;
-            ++i;
+        if (head == tail){      // Para un elemento en la lista.
+            head = 0;
+            tail = 0;
+        } else {
+            head = p->next;
+            p->next->previous = 0;
         }
 
         delete p;
