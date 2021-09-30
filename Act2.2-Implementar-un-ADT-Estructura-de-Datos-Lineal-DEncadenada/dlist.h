@@ -18,7 +18,6 @@ template <class T>
 class DLink{     // Representa a un nodo
 private:
     DLink(T val) : value(val), next(0) {} // Primer constructor, recibe objeto apunta a nulo.
-    DLink(T val, DLink* nxt) : value(val), next(nxt) {}
     DLink(const DLink<T> &source) {}
 
     T value;
@@ -111,7 +110,8 @@ public:
             tail = 0;
         } else {
             head = p->next;
-            p->next->previous = 0;
+            //p->next->previous = 0;
+            head->previous=0;       // Equivalencia a la línea de arriba.
         }
 
         delete p;
