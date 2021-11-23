@@ -116,7 +116,7 @@ public:
             right->levelbylevel(aux);
         }
     }
-    string ancestors(const T val, stringstream &aux){
+    string ancestor(const T val, stringstream &aux){
         if (val < value) {
             if (aux.tellp() != 1){      // Valida que si está en la posición 1 del arreglo, no imprima el espacio. .tellp - tell position.
                 aux << " ";
@@ -197,7 +197,7 @@ public:
     string ancestors(const T &val){
         stringstream aux;
         aux<<"[";
-        if (!root->ancestors(val, aux)){
+        if (!root->ancestor(val, aux)){
             return "[]";
         }
         aux<<"]";

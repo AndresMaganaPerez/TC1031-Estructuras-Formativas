@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
 	cout << "\n" <<"4.- esperada " << 4  << "\n programa " << bst.height() << "\n";
 	cout <<	(4 == bst.height() ? "success\n" : "fail\n");
 
-	ans = "[10 12 110]";
+ 	ans = "[10 12 110]";
 	cout << "\n" <<"5.- esperada " << ans << "\n programa " << bst.ancestors(112) << "\n";
 	cout <<	(!ans.compare(bst.ancestors(112)) ? "success\n" : "fail\n");
 
