@@ -34,9 +34,9 @@ private:
     vector<int> *adjList;
 		int *adjMatrix;
 		//vector<Type> *vect = new vector<Type>
-        string dHelper(int, int, stack<int> &, list<int> &, vector<vector<int>> &);
+        void dHelper(int, int, stack<int> &, list<int> &, vector<vector<int>> &);
         void printVisited(list<int> &visited);
-        void printPath(vector<vector<int>> &, int, int);
+        string printPath(vector<vector<int>> &, int, int);
 
 public:
 		void loadGraphMat(string, int, int);
@@ -44,6 +44,7 @@ public:
 		Graph(int);
 		Graph();
 		void addEdgeAdjMatrix(int, int);
+        void addEdgeAdjList(int, int);
 		string printAdjMat();
 		string printAdjMat_clean();
         string printAdjList();
@@ -67,7 +68,7 @@ void Graph::loadGraphMat(string name, int a, int b){
 			while (getline(lee, line)){
 				u = stoi(line.substr(1,1));
 				v = stoi(line.substr(4,1));
-				addEdgeAdjMatrix(u,v);
+				addEdgeAdjList(u,v);
 			}
 			lee.close(); // Closes the file
 		} else {
@@ -75,10 +76,23 @@ void Graph::loadGraphMat(string name, int a, int b){
 		}
 }
 
-void Graph::loadGraphList(string, int a, int b){
-    adjList[a].push_back(b);
-    adjList[b].push_back(a);
-    edgesList++;
+void Graph::loadGraphList(string arch, int a, int b){
+    nodes = a;
+    adjList = new vector<int>[nodes];
+
+    string line;
+    ifstream lee (arch);
+    int u, v;
+    if (lee.is_open()){
+        while (getline(lee, line)){
+            u = stoi(line.substr(1,1));
+            v = stoi(line.substr(4,1));
+            addEdgeAdjMatrix(u,v);
+        }
+        lee.close(); // Closes the file
+    } else {
+        cout << "Unable to open file";
+    }
 }
 
 Graph::Graph() {
@@ -98,6 +112,12 @@ void Graph::addEdgeAdjMatrix(int u, int v){
 	adjMatrix[u*nodes+v] = 1;
 	adjMatrix[v*nodes+u] = 1;
 	edgesMat++;
+}
+
+void Graph::addEdgeAdjList(int u, int v){
+    adjList[u].push_back(v);
+    adjList[v].push_back(u);
+    edgesMat++;
 }
 
 string Graph::printAdjList(){
@@ -144,16 +164,16 @@ string Graph::printAdjMat_clean(){
   }
 	return aux.str();
 }
-string Graph::DFS(int start, int goal) {       // Depth-First Search
+string Graph::DFS(int start, int goal) {       // Depth-First Search - Profundidad
     stack <int> st;
-    list <int> visited;
+    list <int> visited;     // Lista de los nodos visitados
     vector <vector<int>> paths(nodes, vector<int> (1, -1));     // Guarda los caminos.
     st.push(start);
     dHelper(start, goal, st, visited, paths);
-    printPath(paths, start, goal);
+    return printPath(paths, start, goal);
 }
 
-string Graph::dHelper(int current, int goal, stack<int> &st, list<int> &visited, vector<vector<int>> &paths) {
+void Graph::dHelper(int current, int goal, stack<int> &st, list<int> &visited, vector<vector<int>> &paths) {
     if (current == goal){       // 1er Caso base de recursión.
         printVisited(visited);
     } else if (st.empty()){     // 2ndo Caso base de recursión.
@@ -180,25 +200,41 @@ void Graph::printVisited(list<int> &v){
     cout<<endl;
 }
 
-void Graph::printPath(vector<vector<int>> &path, int start, int goal) {
+string Graph::printPath(vector<vector<int>> &path, int start, int goal) {
+    stringstream stroutput;
     int node = path[goal][0];
     stack<int> reverse;
     reverse.push(goal);
-    cout<<"path ";
+    stroutput<<"path ";
     while (node != start){
         reverse.push(node);
         node = path[node][0];
     }
     reverse.push(start);
     while (!reverse.empty()){
-        cout<<reverse.top()<<" ";
+        stroutput<<reverse.top()<<" ";
         reverse.pop();
     }
-    cout<<endl;
+    stroutput<<endl;
+    return stroutput.str();
 }
 
-string Graph::BFS(int, int){        // Breadth-First Search
-
+bool Graph::contains(list<int> ls, int node){
+    list<int>::iterator it;
+    it = find(ls.begin(), ls.end(), node);
+    if(it != ls.end())
+        return true;
+    else
+        return false;
 }
+
+void Graph::sortAdjList(){
+    for (int i = 0; i < nodes; i++)
+        sort(adjList[i].begin(),adjList[i].end());
+}
+
+/*string Graph::BFS(int, int){        // Breadth-First Search -
+
+}*/
 
 #endif /* Graph_H_ */

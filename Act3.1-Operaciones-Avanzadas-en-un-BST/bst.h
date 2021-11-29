@@ -116,19 +116,19 @@ public:
             right->levelbylevel(aux);
         }
     }
-    string ancestor(const T val, stringstream &aux){
+    bool ancestor(const T val, stringstream &aux){
         if (val < value) {
             if (aux.tellp() != 1){      // Valida que si está en la posición 1 del arreglo, no imprima el espacio. .tellp - tell position.
                 aux << " ";
             }
             aux << value;
-            left->ancestors(val);
+            return (left != 0 && left ->ancestor(val, aux));
         } else if (val > value) {
             if (aux.tellp() != 1){      // Valida que si está en la posición 1 del arreglo, no imprima el espacio. .tellp - tell position.
                 aux << " ";
             }
             aux << value;
-            right->ancestors(val);
+            return (right != 0 && right ->ancestor(val, aux));
         }
         else if (val == value) {
             if (aux.tellp() !=
@@ -136,7 +136,9 @@ public:
                 aux << " ";
             }
             aux << value;
-            return aux.str();
+            return true;
+        } else {
+            return false;
         }
     }
     int whatlevelamI(T val){
@@ -148,6 +150,7 @@ public:
         } else if (val < value) {
             i = left->whatlevelamI(val) + 1;
         }
+        return i;
     };
     friend class BST<T>;
 };
@@ -197,7 +200,7 @@ public:
     string ancestors(const T &val){
         stringstream aux;
         aux<<"[";
-        if (!root->ancestor(val, aux)){
+        if (!root->ancestor(val, aux)){     // TODO: Regresa cadena en vez de booleano.
             return "[]";
         }
         aux<<"]";

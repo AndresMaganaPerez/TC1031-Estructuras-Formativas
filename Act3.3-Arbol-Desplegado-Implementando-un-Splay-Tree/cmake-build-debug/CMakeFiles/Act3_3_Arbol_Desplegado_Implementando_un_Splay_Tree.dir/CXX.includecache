@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/droid/CLionProjects/TC1031-Estructuras-Formativas/Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/main.cpp
+iostream
+-
+cstring
+-
+splay.h
+C:/Users/droid/CLionProjects/TC1031-Estructuras-Formativas/Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/splay.h
+
+C:/Users/droid/CLionProjects/TC1031-Estructuras-Formativas/Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/splay.h
+string
+-
+sstream
+-
+iostream
+-
+

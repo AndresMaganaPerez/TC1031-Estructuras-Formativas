@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Act5_1_Implementacion_Individual_de_Operaciones_Sobre_Conjuntos" targetName="Act5_1_Implementacion_Individual_de_Operaciones_Sobre_Conjuntos" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25237e7f-80b6-4d80-9a76-7f9821d20470" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Act1.2-Algoritmos-de-Busqueda-y-Ordenamiento/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act1.2-Algoritmos-de-Busqueda-y-Ordenamiento/cmake-build-debug/Act1_2_Algoritmos_de_Busqueda_y_Ordenamiento.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act1.2-Algoritmos-de-Busqueda-y-Ordenamiento/cmake-build-debug/CMakeFiles/Act1_2_Algoritmos_de_Busqueda_y_Ordenamiento.dir/main.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/.idea/Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/cmake-build-debug/Act3_3_Arbol_Desplegado_Implementando_un_Splay_Tree.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/cmake-build-debug/CMakeFiles/Act3_3_Arbol_Desplegado_Implementando_un_Splay_Tree.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/cmake-build-debug/CMakeFiles/Act3_3_Arbol_Desplegado_Implementando_un_Splay_Tree.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/cmake-build-debug/CMakeFiles/Act3_3_Arbol_Desplegado_Implementando_un_Splay_Tree.dir/main.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/cmake-build-debug/CMakeFiles/Act3_3_Arbol_Desplegado_Implementando_un_Splay_Tree.dir/objects.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Act3.3-Arbol-Desplegado-Implementando-un-Splay-Tree/splay.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quadratic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act1.2-Algoritmos-de-Busqueda-y-Ordenamiento/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act1.2-Algoritmos-de-Busqueda-y-Ordenamiento/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Act1.2-Algoritmos-de-Busqueda-y-Ordenamiento/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act1.2-Algoritmos-de-Busqueda-y-Ordenamiento/sorts.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Act1.2-Algoritmos-de-Busqueda-y-Ordenamiento/sorts.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act2.1-Implementacion-de-ADT-de-Estructura-de-Datos-Lineales/ReadMe.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Act2.1-Implementacion-de-ADT-de-Estructura-de-Datos-Lineales/ReadMe.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act3.1-Operaciones-Avanzadas-en-un-BST/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Act3.1-Operaciones-Avanzadas-en-un-BST/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act3.1-Operaciones-Avanzadas-en-un-BST/bst.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Act3.1-Operaciones-Avanzadas-en-un-BST/bst.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act3.2-Arbol-Heap-Implementando-una-Fila-Priorizada/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Act3.2-Arbol-Heap-Implementando-una-Fila-Priorizada/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act4.1-Grafos-sus-Representaciones-y-sus-Recorridos/graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Act4.1-Grafos-sus-Representaciones-y-sus-Recorridos/graph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act4.1-Grafos-sus-Representaciones-y-sus-Recorridos/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Act4.1-Grafos-sus-Representaciones-y-sus-Recorridos/main.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="21Z0I0dlW1lgMbsHvz41IYedLAg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Act5_1_Implementacion_Individual_de_Operaciones_Sobre_Conjuntos" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Act5_1_Implementacion_Individual_de_Operaciones_Sobre_Conjuntos" TARGET_NAME="Act5_1_Implementacion_Individual_de_Operaciones_Sobre_Conjuntos" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Act5_1_Implementacion_Individual_de_Operaciones_Sobre_Conjuntos" RUN_TARGET_NAME="Act5_1_Implementacion_Individual_de_Operaciones_Sobre_Conjuntos">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25237e7f-80b6-4d80-9a76-7f9821d20470" name="Changes" comment="" />
+      <created>1638133219197</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638133219197</updated>
+      <workItem from="1638133220831" duration="1121000" />
+      <workItem from="1638207885362" duration="6477000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
