@@ -7,6 +7,7 @@
 
 #include <string>
 #include <sstream>
+#include "exception"
 
 using namespace std;
 
@@ -36,20 +37,19 @@ template <class Key, class Value>
 Quadratic<Key, Value>::Quadratic(unsigned int sze, Key init, unsigned int (*f)(const Key)) {
     size = sze;
     initialValue = init;
-    count = 0;
 
-    keys = new Key(size);   // Al apuntador keys le asignamos un arreglo de keys con el tamaño size, que se va a crear en el Heap.
-    if (keys == 0){     // Validación: Se checa que no salga del tamaño de la memoria Heap.
+    keys = new Key[size];   // Al apuntador keys le asignamos un arreglo de keys con el tamaño size, que se va a crear en el Heap.
+    /*if (keys == 0){     // Validación: Se checa que no salga del tamaño de la memoria Heap.
         cout<<"Out of Memory";
-    }
-    for(int i = 0; i < size; i++){      // Recorremos el arreglo de keys asignándole el valor de default.
+    }*/
+    for(unsigned int i = 0; i < size; i++){      // Recorremos el arreglo de keys asignándole el valor de default.
         keys[i]=init;
     }
 
-    values = new Value(size);       // Al apuntador de values se le asigna un nuevo arreglo de value con tamaño size.
-    if (values == 0){       // Validación: Se checa que no salga del tamaño de la memoria Heap.
+    values = new Value[size];       // Al apuntador de values se le asigna un nuevo arreglo de value con tamaño size.
+   /* if (values == 0){       // Validación: Se checa que no salga del tamaño de la memoria Heap.
         cout<<"Out of Memory";
-    }
+    }*/
     for(int i = 0; i < size; i++){      // Se recorre el arreglo agregando los valores de default.
         values[i]=0;
     }
@@ -77,25 +77,27 @@ long Quadratic<Key, Value>::indexOf(const Key k) const{
 template <class Key, class Value>
 bool Quadratic<Key, Value>::put(Key k, Value v){
     unsigned int start = func(k) % size, i = func(k) % size;
+    int q = 0;
     long pos = indexOf(k);
 
-    if (count >= size){
+    /*if (count >= size){
         cout<<"Overflow";
-    }
+    }*/
 
-    if (pos != -1){
-        values[pos] = v;
+    if (pos != -1){     // Condición que verifica que el índice exista.
+        values[pos] = v;    // Si existe en el arreglo values en el índice encontrado, asigna el valor recibido en la función.
         return true;
     }
 
     do {
-        if (keys[i] == initialValue){
+        if (keys[i] == initialValue){       // Si el valor dentro de Keys es igual a empty, crea una nueva llave con su valor.
             keys[i] = k;
             values[i] = v;
             count ++;
             return true;
         }
-        i = (i+1) % size;
+        i = (start + q*q) % size;
+        q++;
     } while (start != i);
     return false;
 }

@@ -3,3 +3,4 @@
 * Corrección en Búsqueda y Ordenamiento
 * Corrección en BST 
 * Corrección en Splay
+* Corrección Hash
