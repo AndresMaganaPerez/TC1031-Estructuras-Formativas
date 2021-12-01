@@ -89,16 +89,15 @@ bool Quadratic<Key, Value>::put(Key k, Value v){
         return true;
     }
 
-    do {
-        if (keys[i] == initialValue){       // Si el valor dentro de Keys es igual a empty, crea una nueva llave con su valor.
+    for(int j = 0; j < size; j++) {
+        if (keys[i] == initialValue) {       // Si el valor dentro de Keys es igual a empty, crea una nueva llave con su valor.
             keys[i] = k;
             values[i] = v;
-            count ++;
+            count++;
             return true;
         }
-        i = (start + q*q) % size;
-        q++;
-    } while (start != i);
+        i = (start + j * j) % size;
+    }
     return false;
 }
 
@@ -107,7 +106,10 @@ template <class Key, class Value>
 Value Quadratic<Key, Value>::get(const Key k){
     long pos = indexOf(k);
 
-    return (pos != 1) ? values[pos] : -1;
+    if (pos != -1){
+        return values[pos];
+    }
+    return 0;
 }
 
 // impresion clase quadratic
