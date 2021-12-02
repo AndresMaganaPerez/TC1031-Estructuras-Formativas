@@ -13,7 +13,7 @@
 #define Graph_H_
 
 #include <string>
-#include <stdio.h>
+#include <cstdio>
 #include <sstream>
 #include <fstream>
 #include <iostream>
@@ -28,61 +28,47 @@ using namespace std;
 
 class Graph {
 private:
-		int edgesList;
-		int edgesMat;
-		int nodes;
+    int edgesList;
+    int edgesMat;
+    int nodes;
     vector<int> *adjList;
-		int *adjMatrix;
-		//vector<Type> *vect = new vector<Type>
-        void dHelper(int, int, stack<int> &, list<int> &, vector<vector<int>> &, stringstream &);
-        void bHelper(int, int, queue<int> &, list<int> &, vector<vector<int>> &, stringstream &);
-        static void printVisited(list<int>, stringstream &);
-        static void printPath(vector<vector<int>> &, int, int, stringstream &);
+    int *adjMatrix;
+    void dHelper(int, int, stack<int> &, list<int> &, vector<vector<int>> &, stringstream &);
+    void bHelper(int, int, queue<int> &, list<int> &, vector<vector<int>> &, stringstream &);
 
 public:
-		void loadGraphMat(const string&, int, int);
-        void loadGraphList(const string&, int, int);
-		Graph(int);
-		Graph();
-		void addEdgeAdjMatrix(int, int);
-        void addEdgeAdjList(int, int);
-		string printAdjMat();
-		string printAdjMat_clean();
-        string printAdjList();
-        string DFS(int, int);
-        string BFS(int, int);
+    Graph();
+    Graph(int);
 
-		bool contains(list<int>, int);
-		void sortAdjList();
+    void loadGraphMat(const string&, int, int);
+    void loadGraphList(const string&, int, int);
+
+    void addEdgeAdjMatrix(int, int);
+    void addEdgeAdjList(int, int);
+
+    string printAdjMat();
+    string printAdjMat_clean();
+    string printAdjList();
+    string DFS(int, int);
+    string BFS(int, int);
+
+    static void printVisited(list<int>, stringstream &);
+    static void printPath(vector<vector<int>> &, int, int, stringstream &);
+    bool contains(list<int>, int);
+    void sortAdjList();
 };
 
-
-void Graph::loadGraphMat(const string &name, int a, int b){
-	adjMatrix = new int [a * b];
-	nodes = a;
-	for (int i = 0; i < a * b; i++)
-		adjMatrix[i] = 0;
-		string line;
-		ifstream archivo(name);
-		int u, v;
-		if (archivo.is_open()){
-			while (getline(archivo, line)){
-				u = stoi(line.substr(1,1));
-				v = stoi(line.substr(4,1));
-				addEdgeAdjList(u,v);
-			}
-			archivo.close(); // Closes the file
-		} else {
-			cout << "Unable to open file";
-		}
+Graph::Graph() {
+    edgesList = edgesMat = 0;
 }
 
-void Graph::loadGraphList(const string &name, int a, int b){
+void Graph::loadGraphMat(const string &name, int a, int b){
+    adjMatrix = new int [a * b];
     nodes = a;
-    adjList = new vector<int>[nodes];
-
+    for (int i = 0; i < a * b; i++)
+        adjMatrix[i] = 0;
     string line;
-    ifstream archivo (name);
+    ifstream archivo(name);
     int u, v;
     if (archivo.is_open()){
         while (getline(archivo, line)){
@@ -96,23 +82,40 @@ void Graph::loadGraphList(const string &name, int a, int b){
     }
 }
 
-Graph::Graph() {
-	edgesList = edgesMat = nodes = 0;
+void Graph::loadGraphList(const string &name, int a, int b){
+    fstream archivo;
+    nodes = a;
+    adjList = new vector<int>[nodes];
+
+    string line;
+    archivo.open(name);
+    int u, v;
+    if (archivo.is_open()){
+        while (getline(archivo, line)){
+            u = stoi(line.substr(1,1));
+            v = stoi(line.substr(4,1));
+            addEdgeAdjList(u,v);
+        }
+        archivo.close(); // Closes the file
+    } else {
+        cout << "Unable to open file";
+    }
 }
 
-/*Graph::Graph(int n) {
-	nodes = n;
-	adjList = new vector<int>[nodes];
-	adjMatrix = new int [nodes*nodes];
-	for (int i = 0; i < nodes*nodes; i++)
-		adjMatrix[i] = 0;
-	edgesList = edgesMat = 0;
-}*/
+
+Graph::Graph(int n) {
+    nodes = n;
+    adjList = new vector<int>[nodes];
+    adjMatrix = new int [nodes*nodes];
+    for (int i = 0; i < nodes*nodes; i++)
+        adjMatrix[i] = 0;
+    edgesList = edgesMat = 0;
+}
 
 void Graph::addEdgeAdjMatrix(int u, int v){
-	adjMatrix[u*nodes+v] = 1;
-	adjMatrix[v*nodes+u] = 1;
-	edgesMat++;
+    adjMatrix[u*nodes+v] = 1;
+    adjMatrix[v*nodes+u] = 1;
+    edgesMat++;
 }
 
 void Graph::addEdgeAdjList(int u, int v){
@@ -122,49 +125,49 @@ void Graph::addEdgeAdjList(int u, int v){
 }
 
 string Graph::printAdjList(){
-	  stringstream aux;
-      sortAdjList();
-		for (int i = 0; i < nodes; i++){
-	        aux << "vertex "
-	             << i << " :";
-	        for (int j = 0; j < adjList[i].size(); j ++){
-							 aux << " " << adjList[i][j];
-					}
-	        aux << " ";
+    stringstream aux;
+    sortAdjList();
+    for (int i = 0; i < nodes; i++){
+        aux << "vertex "
+            << i << " :";
+        for (int j = 0; j < adjList[i].size(); j ++){
+            aux << " " << adjList[i][j];
+        }
+        aux << " ";
     }
-		return aux.str();
+    return aux.str();
 
 }
 
 string Graph::printAdjMat(){
-	stringstream aux;
-	for (int i = 0; i < nodes; i++){
-	   for (int j = 0; j < nodes; j++){
-			 aux << adjMatrix[i*nodes+j] << " ";
-		 }
-  }
-	return aux.str();
+    stringstream aux;
+    for (int i = 0; i < nodes; i++){
+        for (int j = 0; j < nodes; j++){
+            aux << adjMatrix[i*nodes+j] << " ";
+        }
+    }
+    return aux.str();
 }
 
 string Graph::printAdjMat_clean(){
-	stringstream aux;
-	aux << "\n nodes \t|";
-	for (int i = 0; i < nodes; i++){
-			aux << "\t" << i ;
-	}
-	aux << "\n";
-	for (int i = 0; i < nodes; i++){
-			aux << "__________";
-	}
-	aux << "\n";
-	for (int i = 0; i < nodes; i++){
-		 aux << i << "\t|";
-	   for (int j = 0; j < nodes; j++){
-			 aux << "\t" << adjMatrix[i*nodes+j];
-		 }
-	   aux << "\n";
-  }
-	return aux.str();
+    stringstream aux;
+    aux << "\n nodes \t|";
+    for (int i = 0; i < nodes; i++){
+        aux << "\t" << i ;
+    }
+    aux << "\n";
+    for (int i = 0; i < nodes; i++){
+        aux << "__________";
+    }
+    aux << "\n";
+    for (int i = 0; i < nodes; i++){
+        aux << i << "\t|";
+        for (int j = 0; j < nodes; j++){
+            aux << "\t" << adjMatrix[i*nodes+j];
+        }
+        aux << "\n";
+    }
+    return aux.str();
 }
 string Graph::DFS(int start, int goal) {       // Depth-First Search - Profundidad
     stringstream aux;
@@ -236,7 +239,6 @@ void Graph::printVisited(list<int> visited, stringstream &aux){
         aux <<visited.front()<<" ";
         visited.pop_front();
     }
-    cout<<endl;
 }
 
 void Graph::printPath(vector<vector<int>> &path, int start, int goal, stringstream &aux) {
@@ -271,12 +273,9 @@ bool Graph::contains(list<int> ls, int node){
 }
 
 void Graph::sortAdjList(){
-    for (int i = 0; i < nodes; i++)
-        sort(adjList[i].begin(),adjList[i].end());
+    for (int i = 0; i < nodes; i++) {
+        sort(adjList[i].begin(), adjList[i].end());
+    }
 }
-
-/*string Graph::BFS(int, int){        // Breadth-First Search -
-
-}*/
 
 #endif /* Graph_H_ */

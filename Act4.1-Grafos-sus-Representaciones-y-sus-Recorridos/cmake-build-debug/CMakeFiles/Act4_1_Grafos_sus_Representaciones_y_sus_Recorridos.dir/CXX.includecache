@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/droid/CLionProjects/TC1031-Estructuras-Formativas/Act4.1-Grafos-sus-Representaciones-y-sus-Recorridos/graph.h
+string
+-
+cstdio
+-
+sstream
+-
+fstream
+-
+iostream
+-
+vector
+-
+queue
+-
+stack
+-
+list
+-
+algorithm
+-
+
+C:/Users/droid/CLionProjects/TC1031-Estructuras-Formativas/Act4.1-Grafos-sus-Representaciones-y-sus-Recorridos/main.cpp
+iostream
+-
+cstring
+-
+graph.h
+C:/Users/droid/CLionProjects/TC1031-Estructuras-Formativas/Act4.1-Grafos-sus-Representaciones-y-sus-Recorridos/graph.h
+
