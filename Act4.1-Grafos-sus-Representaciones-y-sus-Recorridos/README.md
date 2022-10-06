@@ -28,11 +28,4 @@ La función de recorrido DFS tiene una complejidad de **O(log n)**. Hace recorri
 y los nodos de start y goal.
 
 ## Función BFS
-La función de recorrido BFS tiene la misma complejidad que DFS de **O(log n)** por las mismas razones. 
-
----
-
-# Correcciones
-Mi IDE no leía los archivos de texto que estaban en el directorio, debido a que tienen que estar en la carpeta de 
-*cmake-build-debug*. Hice dos copias de los archivos de g y star dentro de dicho directorio para que pudiera correr bien 
-el programa. 
+La función de recorrido BFS tiene la misma complejidad que DFS de **O(log n)** por las mismas razones. tos algoritmos debido a que tienen ciclos for and while tienen una complejidad de O(n), el número de ciclos que va realizar el código dependerá de las variables con las que se trabaja. 
